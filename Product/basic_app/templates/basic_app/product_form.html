@@ -1,0 +1,23 @@
+{% extends "basic_app/app_base.html" %}
+
+{% block __body__ %}
+
+	{% if form.instance.pk %}
+		<h1>Update Product:</h1>
+	{% else %}
+		<h1>Create Product:</h1>
+	{% endif %}
+
+	<form method="post">
+		{% csrf_token %}
+		{{form.as_p}}
+		
+		{% if form.instance.pk %}
+			<input type="submit" value="Update">
+		{% else %}
+			<input type="submit" value="Create">
+		{% endif %}
+
+	</form>
+
+{% endblock __body__ %}

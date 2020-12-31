@@ -1,0 +1,14 @@
+{% extends "basic_app/app_base.html" %}
+
+{% block __body__ %}
+
+	<h1>Details for {{product.Name}}:</h1>
+	<p>Name: {{product.Name}}</p>
+	<p>Company: {{product.Company}}</p>
+	<p>Published: {{product.Published}}</p>
+	<p>Price: {{product.Price}}$</p>
+
+	<h2><a href="{% url 'basic_app:product_update' pk=product.pk %}">Update Product</a></h2>
+	<h2><a href="{% url 'basic_app:product_delete' pk=product.pk %}">Delete Product</a></h2>
+
+{% endblock __body__ %}
